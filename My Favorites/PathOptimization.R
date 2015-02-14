@@ -52,8 +52,9 @@ x0=c(1,2,3,4,5,6,7,8,9,10)
 
 ## Simulate the Markov Chain
 Simulator<-function(N,x0){
-collect<-list(x0)
-x=x0
+	collect<-list(x0)
+	x=x0
+	
 	for(i in 1:N){
 	lambda<-1*log(1+i)
 	y=Proposal(x)
@@ -62,7 +63,8 @@ x=x0
 		{x=y} else {x=x}
 	collect[[i]]<-x
 	}
-return(collect)
+	
+	return(collect)
 }
 
 ## Simulation
