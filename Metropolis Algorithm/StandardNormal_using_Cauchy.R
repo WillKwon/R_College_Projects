@@ -7,9 +7,9 @@
 ##################################################################
 set.seed(190021); rm(list=ls())
 
+
 # Target Distribution: Standard Normal
 # Proposal Distribution: Cauchy Distribution 
-
 Cauchy = function(x) dcauchy(x,0,1)
 Normal = function(x) dnorm(x,0,1)
 
@@ -18,8 +18,7 @@ curve(Cauchy, xlim = c(-4,4),add=T)
 # Cauchy is quite close to the Standard Normal
 # Hence, it is a good choice as a proposal
 
-initial = 0
-
+# Now Construct our function
 MCMC_Normal = function(n, initial = 0){
 	current = initial
 	MC = c(); i = 0
@@ -33,12 +32,10 @@ MCMC_Normal = function(n, initial = 0){
 		# Caculate Acceptance
 		U = runif(1)
 		accept = (dnorm(nex)*dcauchy(nex, current, 1)) / (dnorm(current)*dcauchy(current, nex, 1)) 
-		if( U <= accept ){
+		if( U <= accept )
 			current = nex	
-		}
-		else{
+		else
 			current = current
-		}
 		
 		# Collect
 		MC[i] = current
