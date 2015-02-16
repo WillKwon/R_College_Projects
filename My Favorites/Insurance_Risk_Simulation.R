@@ -10,7 +10,7 @@
 # At any evaluated moment, the company is considered as bankrupt if 
 # if its Capital is negative 
 #
-# To have a meaningful insight, one needs to input meaningful parameters
+# To gain a meaningful insight, one needs to input meaningful parameters
 #
 # Will Daewook Kwon - will.dw.kwon@gmail.com
 ##################################################################
